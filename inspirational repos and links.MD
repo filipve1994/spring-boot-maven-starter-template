@@ -88,6 +88,14 @@
 
 ## Tutorials
 
+## spring boot all kinds of tutorials and nice to know
+
+- https://www.geeksforgeeks.org/spring-boot-random-dynamic-port-allocation/
+- https://www.appsdeveloperblog.com/start-spring-boot-app-on-a-random-port-number/
+- https://www.baeldung.com/spring-boot-running-port
+- 
+- 
+- 
 
 
 ## Other
