@@ -1,0 +1,14 @@
+springdoc:
+  version: '@springdoc.version@'
+  show-actuator: true
+  paths-to-match: /**
+  packages-to-scan: org.fve.springdocapisample
+  swagger-ui:
+    display-request-duration: true
+    groups-order: desc
+    operations-sorter: method
+    disable-swagger-default-url: true
+    use-root-path: true
+    path: /swagger-ui
+  api-docs:
+    path: /v3/api-docs

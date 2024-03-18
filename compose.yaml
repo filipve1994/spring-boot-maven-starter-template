@@ -1,0 +1,3 @@
+include:
+  - compose-mysql.yaml
+services:
