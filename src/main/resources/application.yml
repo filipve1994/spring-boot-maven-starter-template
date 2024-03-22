@@ -13,9 +13,9 @@ server:
 
 spring:
   application:
-    name: springbootmavenstartertemplate, springdoc
+    name: springbootmavenstartertemplate
   profiles:
-    active: customproperties
+    active: customproperties, springdoc
   liquibase:
     enabled: false # default turning liquibase off
 
