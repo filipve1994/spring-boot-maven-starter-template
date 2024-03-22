@@ -1,14 +1,18 @@
-server:
-  address: localhost
-  # Random/Dynamic Port:
-  # port: 0
-  # Random port in a custom predefined range:
-  port: ${random.int(8020,8030)}
-  compression:
-    enabled: true
-
 spring:
-  application:
-    name: springbootmavenstartertemplate
-  liquibase:
-    enabled: false # default turning liquibase off
+  datasource:
+    url: jdbc:postgresql://localhost:5432/testdb
+    username: ${POSTGRESQL_USER:postgres}
+    password: ${POSTGRESQL_PASSWORD:123}
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  #      naming:
+#        implicit-strategy:
+#        physical-strategy:
+
+#https://hackernoon.com/using-postgres-effectively-in-spring-boot-applications
