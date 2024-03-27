@@ -50,10 +50,13 @@
         <junit-pioneer.version>2.2.0</junit-pioneer.version>
 
         <apache-commons-io.version>2.15.1</apache-commons-io.version>
+        <apache-commons-beanutils.version>1.9.4</apache-commons-beanutils.version>
         <apache-commons-collections4.version>4.4</apache-commons-collections4.version>
         <apache-commons-text.version>1.11.0</apache-commons-text.version>
         <apache-commons-math3.version>3.6.1</apache-commons-math3.version>
         <apache-commons-validator.version>1.7</apache-commons-validator.version>
+
+        <passay.version>1.6.4</passay.version>
 
         <google-guava.version>33.1.0-jre</google-guava.version>
         <findbugs.version>3.0.2</findbugs.version>
@@ -108,6 +111,13 @@
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${apache-commons-io.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>${apache-commons-beanutils.version}</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
@@ -280,6 +290,15 @@
                 <version>${auth0-java-jwt.version}</version>
             </dependency>
 
+
+            <!-- https://mvnrepository.com/artifact/org.passay/passay -->
+            <dependency>
+                <groupId>org.passay</groupId>
+                <artifactId>passay</artifactId>
+                <version>${passay.version}</version>
+            </dependency>
+
+
             <!-- springdoc -->
             <!-- https://springdoc.org/ -->
 
@@ -394,35 +413,35 @@
 
         <!-- security -->
 
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.boot</groupId>-->
-        <!--            <artifactId>spring-boot-starter-security</artifactId>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
 
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.security</groupId>-->
-        <!--            <artifactId>spring-security-test</artifactId>-->
-        <!--            <scope>test</scope>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
 
         <!-- JWT -->
 
-        <!--        <dependency>-->
-        <!--            <groupId>io.jsonwebtoken</groupId>-->
-        <!--            <artifactId>jjwt-api</artifactId>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+        </dependency>
 
-        <!--        <dependency>-->
-        <!--            <groupId>io.jsonwebtoken</groupId>-->
-        <!--            <artifactId>jjwt-impl</artifactId>-->
-        <!--            <scope>runtime</scope>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <scope>runtime</scope>
+        </dependency>
 
-        <!--        <dependency>-->
-        <!--            <groupId>io.jsonwebtoken</groupId>-->
-        <!--            <artifactId>jjwt-jackson</artifactId>-->
-        <!--            <scope>runtime</scope>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <scope>runtime</scope>
+        </dependency>
 
         <!--        <dependency>-->
         <!--            <groupId>com.auth0</groupId>-->
@@ -448,10 +467,10 @@
 
         <!-- validation -->
 
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.boot</groupId>-->
-        <!--            <artifactId>spring-boot-starter-validation</artifactId>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
 
         <!-- scheduling -->
 
@@ -493,10 +512,15 @@
 
         <!-- web -->
 
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.boot</groupId>-->
-        <!--            <artifactId>spring-boot-starter-web</artifactId>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+        </dependency>
 
         <!--        &lt;!&ndash; https://mvnrepository.com/artifact/io.github.wimdeblauwe/error-handling-spring-boot-starter &ndash;&gt;-->
         <!--        <dependency>-->
@@ -507,11 +531,10 @@
         <!-- springdoc -->
         <!-- https://springdoc.org/ -->
 
-        <!--        <dependency>-->
-        <!--            <groupId>org.springdoc</groupId>-->
-        <!--            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>-->
-        <!--            <version>${springdoc.version}</version>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+        </dependency>
 
         <!--        <dependency>-->
         <!--            <groupId>org.springdoc</groupId>-->
@@ -546,10 +569,10 @@
 
         <!-- caching -->
 
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.boot</groupId>-->
-        <!--            <artifactId>spring-boot-starter-cache</artifactId>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
 
         <!--        <dependency>-->
         <!--            <groupId>javax.cache</groupId>-->
@@ -578,10 +601,10 @@
 
         <!-- Database -->
 
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.boot</groupId>-->
-        <!--            <artifactId>spring-boot-starter-data-jpa</artifactId>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
 
         <!--        &lt;!&ndash; https://mvnrepository.com/artifact/io.hypersistence/hypersistence-utils-hibernate-60 &ndash;&gt;-->
         <!--        &lt;!&ndash; https://github.com/vladmihalcea/hypersistence-utils &ndash;&gt;-->
@@ -651,19 +674,19 @@
 
         <!-- h2 -->
 
-        <!--        <dependency>-->
-        <!--            <groupId>com.h2database</groupId>-->
-        <!--            <artifactId>h2</artifactId>-->
-        <!--            <scope>runtime</scope>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
 
         <!-- mysql -->
 
-        <!--        <dependency>-->
-        <!--            <groupId>com.mysql</groupId>-->
-        <!--            <artifactId>mysql-connector-j</artifactId>-->
-        <!--            <scope>runtime</scope>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <scope>runtime</scope>
+        </dependency>
 
         <!--        <dependency>-->
         <!--            <groupId>org.testcontainers</groupId>-->
@@ -797,6 +820,19 @@
             <optional>true</optional>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.passay/passay -->
+        <dependency>
+            <groupId>org.passay</groupId>
+            <artifactId>passay</artifactId>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+        </dependency>
+
+
         <!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305 &ndash;&gt;-->
         <!--        &lt;!&ndash;        JSR305 Annotations for Findbugs&ndash;&gt;-->
         <!--        <dependency>-->
@@ -883,10 +919,10 @@
         <!--            <artifactId>datafaker</artifactId>-->
         <!--        </dependency>-->
 
-        <!--        <dependency>-->
-        <!--            <groupId>org.modelmapper</groupId>-->
-        <!--            <artifactId>modelmapper</artifactId>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+        </dependency>
 
         <!--        <dependency>-->
         <!--            <groupId>org.mapstruct</groupId>-->

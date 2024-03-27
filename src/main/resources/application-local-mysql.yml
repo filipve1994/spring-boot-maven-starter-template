@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/${MYSQL_DATABASE:world}?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
-    username: ${MYSQL_USER:root}
-    password: ${MYSQL_PASSWORD:dbpassword}
+    url: jdbc:mysql://localhost:3306/${MYSQL_DATABASE:mydatabase}?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
+    username: ${MYSQL_USER:myuser}
+    password: ${MYSQL_PASSWORD:secret}
   jpa:
     hibernate:
       ddl-auto: create-drop

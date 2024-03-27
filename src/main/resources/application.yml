@@ -29,7 +29,8 @@ spring:
     name: springbootmavenstartertemplate
     version: ^project.version^
   profiles:
-    active: local-h2
+#    active: local-h2
+    active: local-mysql
   liquibase:
     enabled: false # default turning liquibase off
   #  https://www.baeldung.com/docker-compose-support-spring-boot
@@ -69,6 +70,7 @@ spring:
     cache: false
   web:
     locale: en
+    locale-resolver: fixed
   data:
     web:
       pageable:
@@ -159,9 +161,17 @@ springdoc:
 #####
 
 app:
-  description: @project.description@
-  version: @project.version@
+  config:
+    aspectjlogging:
+      enabled: true
+    caching:
+      enabled: true
+    jpa:
+      auditing:
+        enabled: true
 
+  description: '@project.description@'
+  version: '@project.version@'
   jwt:
     secretKey: 90c8c2c617816e6a2afe2c4ed8abcfeed5144a0d73a39648df3228690b64f45e
     issuer: ${JWT_ISSUER:https://github.com/rimmelasghar}
@@ -176,17 +186,6 @@ app:
     version: ${SWAGGER_APP_VERSION:2.0.0}
     license-url: ${SWAGGER_APP_LICENSE_URL:https://www.apache.org/licenses/LICENSE-2.0.html}
     license: ${SWAGGER_APP_LICENSE:Apache 2.0}
-
-swagger:
-  contact-name: Filip VE
-  contact-mail: ${SWAGGER_CONTACT_MAIL:filipve@email.com}
-  contact-url: ${SWAGGER_CONTACT_URL:https://filipve.com}
-  app-name: ${SWAGGER_APP_NAME:Spring Boot Boilerplate Project}
-  app-description: "Spring Boot Boilerplate is a starter kit for developing production ready SpringBoot Applications. This project includes : Spring Boot(3.1.2), Spring Data JPA, Spring Validation, Spring Security + JWT Token, MySQL, Mapstruct, Lombok, Swagger "
-  app-version: ${SWAGGER_APP_VERSION:2.0.0}
-  app-license-url: ${SWAGGER_APP_LICENSE_URL:https://www.apache.org/licenses/LICENSE-2.0.html}
-  app-license: ${SWAGGER_APP_LICENSE:Apache 2.0}
-
 
 management:
   endpoint:
