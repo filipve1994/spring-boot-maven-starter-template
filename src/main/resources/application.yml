@@ -28,6 +28,8 @@ spring:
   application:
     name: springbootmavenstartertemplate
     version: ^project.version^
+    appVersion: '@project.version@'
+    description: ${APP_DESCRIPTION:App Description}
   profiles:
 #    active: local-h2
     active: local-mysql
@@ -86,6 +88,11 @@ spring:
     jdbc:
       isolation-level-for-create: default
   # https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#common-application-properties-cache
+  messages:
+    basename: locales.messages
+    encoding: UTF-8
+    cache-duration: ${MESSAGES_CACHE_DURATION:-1}
+
 #  cache:
 #    cache-names: users, examples
 #    caffeine.spec: maximumSize=1000,expireAfterAccess=60s
@@ -169,14 +176,31 @@ app:
     jpa:
       auditing:
         enabled: true
-
   description: '@project.description@'
   version: '@project.version@'
+  registration:
+    email:
+      token:
+        expires-in: ${APP_REGISTRATION_EMAIL_TOKEN_EXPIRES_IN:#{60 * 60 * 1000}} # 60 minutes in milliseconds
+    password:
+      token:
+        expires-in: ${APP_REGISTRATION_PASSWORD_TOKEN_EXPIRES_IN:#{60 * 60 * 1000}} # 60 minutes in milliseconds
+  default-locale: ${APP_DEFAULT_LOCALE:en}
+  default-timezone: ${APP_DEFAULT_TIMEZONE:Europe/Brussels}
+  url: ${APP_URL:http://localhost:${server.port}}
+  frontend-url: ${APP_FRONTEND_URL:http://localhost:3000}
+  secret: ${APP_SECRET:90c8c2c617816e6a2afe2c4ed8abcfeed5144a0d73a39648df3228690b64f45e}
   jwt:
-    secretKey: 90c8c2c617816e6a2afe2c4ed8abcfeed5144a0d73a39648df3228690b64f45e
-    issuer: ${JWT_ISSUER:https://github.com/rimmelasghar}
+    secretKey: ${APP_SECRET:90c8c2c617816e6a2afe2c4ed8abcfeed5144a0d73a39648df3228690b64f45e}
+    issuer: ${JWT_ISSUER:https://github.com/fve}
     expiration-milliseconds: 604800000
     expirationMinute: 10
+#    token:
+#      expires-in: ${APP_JWT_TOKEN_EXPIRES_IN:#{60 * 60 * 1000}} # 60 minutes in milliseconds
+#    refresh-token:
+#      expires-in: ${APP_JWT_REFRESH_TOKEN_EXPIRES_IN:#{24 * 60 * 60 * 1000}} # 24 hours in milliseconds
+#    remember-me:
+#      expires-in: ${APP_JWT_REMEMBER_ME_EXPIRES_IN:#{24 * 60 * 60 * 1000 * 7}} # 7 days in milliseconds
   swagger:
     contact-name: Filip VE
     contact-mail: ${SWAGGER_CONTACT_MAIL:filipve@email.com}

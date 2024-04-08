@@ -57,6 +57,7 @@
         <apache-commons-validator.version>1.7</apache-commons-validator.version>
 
         <passay.version>1.6.4</passay.version>
+        <org.instancio-version>4.5.0</org.instancio-version>
 
         <google-guava.version>33.1.0-jre</google-guava.version>
         <findbugs.version>3.0.2</findbugs.version>
@@ -374,6 +375,17 @@
                 <type>pom</type>
             </dependency>
 
+            <!-- testing -->
+
+            <!-- https://mvnrepository.com/artifact/org.instancio/instancio-junit -->
+            <dependency>
+                <groupId>org.instancio</groupId>
+                <artifactId>instancio-junit</artifactId>
+                <version>${org.instancio-version}</version>
+                <!--                <scope>test</scope>-->
+            </dependency>
+
+
             <!-- spring boot official -->
 
             <dependency>
@@ -481,17 +493,17 @@
 
         <!-- mail -->
 
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.boot</groupId>-->
-        <!--            <artifactId>spring-boot-starter-mail</artifactId>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
 
         <!-- template engines -->
 
-        <!--            <dependency>-->
-        <!--                <groupId>org.springframework.boot</groupId>-->
-        <!--                <artifactId>spring-boot-starter-thymeleaf</artifactId>-->
-        <!--            </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
 
         <!--            <dependency>-->
         <!--                <groupId>org.thymeleaf.extras</groupId>-->
@@ -1017,6 +1029,13 @@
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-launcher</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.instancio/instancio-junit -->
+        <dependency>
+            <groupId>org.instancio</groupId>
+            <artifactId>instancio-junit</artifactId>
             <scope>test</scope>
         </dependency>
 
