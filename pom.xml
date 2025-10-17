@@ -57,7 +57,7 @@
         <apache-commons-validator.version>1.7</apache-commons-validator.version>
 
         <passay.version>1.6.4</passay.version>
-        <org.instancio-version>4.5.0</org.instancio-version>
+        <org.instancio-version>5.5.1</org.instancio-version>
 
         <google-guava.version>33.1.0-jre</google-guava.version>
         <findbugs.version>3.0.2</findbugs.version>
