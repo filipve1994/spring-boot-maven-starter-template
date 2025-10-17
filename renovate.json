@@ -28,7 +28,7 @@
   "rebaseWhen": "behind-base-branch",
   "commitBodyTable": true,
 
-  "requiredStatusChecks": null, // or specify ["build", "test"] if needed
+  "requiredStatusChecks": null,
 
   "cleanupPolicy": "branch"
 }
