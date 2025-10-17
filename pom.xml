@@ -54,7 +54,7 @@
         <apache-commons-collections4.version>4.4</apache-commons-collections4.version>
         <apache-commons-text.version>1.11.0</apache-commons-text.version>
         <apache-commons-math3.version>3.6.1</apache-commons-math3.version>
-        <apache-commons-validator.version>1.7</apache-commons-validator.version>
+        <apache-commons-validator.version>1.10.0</apache-commons-validator.version>
 
         <passay.version>1.6.4</passay.version>
         <org.instancio-version>4.5.0</org.instancio-version>
