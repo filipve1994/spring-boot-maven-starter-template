@@ -52,7 +52,7 @@
         <apache-commons-io.version>2.15.1</apache-commons-io.version>
         <apache-commons-beanutils.version>1.9.4</apache-commons-beanutils.version>
         <apache-commons-collections4.version>4.4</apache-commons-collections4.version>
-        <apache-commons-text.version>1.11.0</apache-commons-text.version>
+        <apache-commons-text.version>1.14.0</apache-commons-text.version>
         <apache-commons-math3.version>3.6.1</apache-commons-math3.version>
         <apache-commons-validator.version>1.7</apache-commons-validator.version>
 
@@ -62,7 +62,7 @@
         <google-guava.version>33.1.0-jre</google-guava.version>
         <findbugs.version>3.0.2</findbugs.version>
         <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
-        <error_prone_annotations.version>2.23.0</error_prone_annotations.version>
+        <error_prone_annotations.version>2.42.0</error_prone_annotations.version>
         <spotbugs-annotations.version>4.8.2</spotbugs-annotations.version>
         <spotify-format-mvn-plugin.version></spotify-format-mvn-plugin.version>
 
@@ -1344,7 +1344,7 @@
                     <plugin>
                         <groupId>org.asciidoctor</groupId>
                         <artifactId>asciidoctor-maven-plugin</artifactId>
-                        <version>2.2.1</version>
+                        <version>2.2.6</version>
                         <executions>
                             <execution>
                                 <id>generate-docs</id>
