@@ -1,6 +1,40 @@
 {
    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
    "extends": [
-      "config:recommended"
-   ]
+"config:base"
+   ],
+     // --- Where Renovate should open PRs ---
+  "baseBranches": ["develop"],
+
+  // --- Limit auto-merging only to small & safe updates ---
+  "packageRules": [
+    {
+      "matchManagers": ["maven"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "automergeType": "branch",             // merge directly without PR
+      "automergeStrategy": "squash",         // squash commit style
+      "rebaseWhen": "behind-base-branch",    // always keep rebased
+      "commitMessageAction": "update dependencies",
+      "commitMessageSuffix": "[skip ci]"     // optional: skip redundant CI runs
+    },
+    {
+      // For major updates, still open a PR, no automerge
+      "matchManagers": ["maven"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "prPriority": -1
+    }
+  ],
+
+  // --- Branch & PR behavior ---
+  "branchPrefix": "renovate/",
+  "rebaseWhen": "behind-base-branch",
+  "commitBodyTable": true,
+
+  // --- Safety: Require passing status checks before automerge ---
+  "requiredStatusChecks": null, // or specify ["build", "test"] if needed
+
+  // --- Clean up old branches automatically ---
+  "cleanupPolicy": "branch"
 }
