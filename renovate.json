@@ -3,23 +3,20 @@
    "extends": [
 "config:base"
    ],
-     // --- Where Renovate should open PRs ---
   "baseBranches": ["develop"],
 
-  // --- Limit auto-merging only to small & safe updates ---
   "packageRules": [
     {
       "matchManagers": ["maven"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true,
-      "automergeType": "branch",             // merge directly without PR
-      "automergeStrategy": "squash",         // squash commit style
-      "rebaseWhen": "behind-base-branch",    // always keep rebased
+      "automergeType": "branch",     
+      "automergeStrategy": "squash",
+      "rebaseWhen": "behind-base-branch",
       "commitMessageAction": "update dependencies",
-      "commitMessageSuffix": "[skip ci]"     // optional: skip redundant CI runs
+      "commitMessageSuffix": "[skip ci]"
     },
     {
-      // For major updates, still open a PR, no automerge
       "matchManagers": ["maven"],
       "matchUpdateTypes": ["major"],
       "automerge": false,
@@ -27,14 +24,11 @@
     }
   ],
 
-  // --- Branch & PR behavior ---
   "branchPrefix": "renovate/",
   "rebaseWhen": "behind-base-branch",
   "commitBodyTable": true,
 
-  // --- Safety: Require passing status checks before automerge ---
   "requiredStatusChecks": null, // or specify ["build", "test"] if needed
 
-  // --- Clean up old branches automatically ---
   "cleanupPolicy": "branch"
 }
